@@ -1,5 +1,6 @@
 import React from 'react';
 import {getState} from "../StateManagement";
+import {DELETE_TODO_ITEM} from "../reducers";
 
 const TodoList = () => {
     const [{todoList}, dispatch] = getState();
@@ -10,7 +11,7 @@ const TodoList = () => {
                 <div key={item.key}>{item.key} - {item.content}
                     <button onClick={() => {
                         dispatch({
-                            type: 'deleteItem',
+                            type: DELETE_TODO_ITEM,
                             key: item.key
                         })
                     }}>Delete

@@ -1,5 +1,6 @@
 import React from 'react';
 import {StateContext} from "../StateManagement";
+import {UPDATE_TODO_LIST} from "../reducers";
 
 class TodoForm extends React.Component {
 
@@ -21,7 +22,7 @@ class TodoForm extends React.Component {
         const dispatch = this.context[1];
         const update = () => {
             dispatch({
-                type: 'updateTodoList',
+                type: UPDATE_TODO_LIST,
                 content: this.state.todoText
             });
             this.setState({
